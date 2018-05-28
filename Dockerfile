@@ -51,13 +51,13 @@ RUN asdf install elixir 1.5.3 && \
     yes | mix local.hex --force && \
     yes | mix local.rebar --force
 
-# Adding Erlang/OTP 20.2.4
-RUN asdf install erlang 20.2.4
+# Adding Erlang/OTP 20.3.6
+RUN asdf install erlang 20.3.6
 
 # Adding Elixir 1.6 with corresponding Erlang
-RUN asdf install elixir 1.6.3 && \
-    asdf global erlang 20.2.4 && \
-    asdf global elixir 1.6.3 && \
+RUN asdf install elixir 1.6.5 && \
+    asdf global erlang 20.3.6 && \
+    asdf global elixir 1.6.5 && \
     yes | mix local.hex --force && \
     yes | mix local.rebar --force
 
@@ -71,18 +71,18 @@ RUN gpg --keyserver ipv4.pool.sks-keyservers.net --recv-keys 94AE36675C464D64BAF
     gpg --keyserver ipv4.pool.sks-keyservers.net --recv-keys 56730D5401028683275BD23C23EFEFE93C4CFFFE && \
     gpg --keyserver ipv4.pool.sks-keyservers.net --recv-keys 77984A986EBC2AA786BC0F66B01FBB92821C587A
 
-# Adding NodeJS 4.8.7 LTS
-RUN asdf install nodejs 4.8.7
+# Adding NodeJS 4.9.1 LTS
+RUN asdf install nodejs 4.9.1
 
-# Adding NodeJS 6.13.1 LTS
-RUN asdf install nodejs 6.13.1
+# Adding NodeJS 6.14.2 LTS
+RUN asdf install nodejs 6.14.2
 
-# Adding NodeJS 8.10.0 LTS
-RUN asdf install nodejs 8.10.0
+# Adding NodeJS 8.11.2 LTS
+RUN asdf install nodejs 8.11.2
 
 # Setting global versions
-RUN asdf global erlang 20.2.4 && \
-    asdf global elixir 1.6.3  && \
-    asdf global nodejs 8.10.0
+RUN asdf global erlang 20.3.6 && \
+    asdf global elixir 1.6.5  && \
+    asdf global nodejs 8.11.2
 
 CMD ["/bin/bash"]
